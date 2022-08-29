@@ -2,7 +2,7 @@
 <script>(async function(){
   var commits = await fetch('https://api.allorigins.win/raw?url=https://api.github.com/repos/tekstudio/tekstudio.github.io/commits').then(r=>r.json());
   var hash = commits[0].sha;
-  (function loop(){
+  (async function loop(){
     var commits = await fetch('https://api.allorigins.win/raw?url=https://api.github.com/repos/tekstudio/tekstudio.github.io/commits').then(r=>r.json());
     if (commits[0].sha != hash) {location.reload();}
     requestAnimationFrame(loop);
